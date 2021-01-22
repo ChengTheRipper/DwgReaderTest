@@ -12,6 +12,8 @@ namespace std
 	}
 }
 
+//我是吴卓承
+
 bool PathGen::ReadAllFiles()
 {
 	//读取背板文件
