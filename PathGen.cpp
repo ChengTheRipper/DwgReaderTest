@@ -52,13 +52,13 @@ bool PathGen::ReadAllFiles()
 	fp_vert = fopen(vert_file_name_.c_str(), "rb");
 	if (fp_vert != NULL)
 	{
-		fseek(fp_hori, 0, SEEK_END); // 寻位到结尾
-		std::size_t filesize = std::ftell(fp_hori) / sizeof(point4w);
-		fseek(fp_hori, 0, SEEK_SET); // 寻位到起始
+		fseek(fp_vert, 0, SEEK_END); // 寻位到结尾
+		std::size_t filesize = std::ftell(fp_vert) / sizeof(point4w);
+		fseek(fp_vert, 0, SEEK_SET); // 寻位到起始
 		for (int i = 0; i < filesize; ++i)
 		{
 			point4w tmp;
-			fread(&tmp, sizeof(point4w), 1, fp_hori);
+			fread(&tmp, sizeof(point4w), 1, fp_vert);
 			vert_paths_.push_back(tmp);
 #ifdef _DEBUG
 			cout << tmp.sx << " " << tmp.sy << " " << tmp.ex << " " << tmp.ey << " " << endl;
